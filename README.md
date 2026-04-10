@@ -1,7 +1,7 @@
 # GLAUX — BMP Steganography Engine
 
 Advanced image steganography with XTEA encryption for Windows.
-<p align="center">
+<p align="left">
   <img src="glaux_owl.jpg" alt="Glaux Owl" width="300"/>
 </p>
 ## What is Glaux?
