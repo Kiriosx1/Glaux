@@ -1,7 +1,9 @@
 # GLAUX — BMP Steganography Engine
 
 Advanced image steganography with XTEA encryption for Windows.
-
+<p align="center">
+  <img src="glaux_owl.jpg" alt="Glaux Owl" width="300"/>
+</p>
 ## What is Glaux?
 
 Glaux is a command-line tool that lets you hide secret messages inside BMP images. Your message is encrypted using the **XTEA algorithm** (eXtended Tiny Encryption Algorithm) and embedded into the least significant bits (LSB) of the image pixels. To anyone looking, the image appears unchanged.
