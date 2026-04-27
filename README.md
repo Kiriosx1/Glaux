@@ -30,22 +30,6 @@ Glaux is a command-line tool that lets you hide secret messages inside BMP image
 2. Place it in any directory on your computer
 3. Optional: Create a shortcut to `glaux.bat` for easy access
 
-## How to Use
-
-### Option 1: Run directly (Recommended)
-Double-click `glaux.bat` or run from command prompt:
-```
-glaux.exe
-```
-
-### Option 2: Run from Command Prompt/PowerShell
-```powershell
-cd C:\Path\To\Glaux
-.\glaux.exe
-```
-
-### Basic Workflow
-
 #### Step 1: Encode (Hide a message)
 1. Run the program: `glaux.exe`
 2. Select option **[1] Encode**
@@ -85,17 +69,6 @@ The actual usable capacity depends on:
 - Image dimensions
 - Color depth (24-bit or 32-bit)
 - Overhead: 4 bytes for the size header
-
-## Advanced Usage
-
-### Command-Line from Batch Script
-Create a .bat file to automate encoding/decoding:
-
-```batch
-@echo off
-chcp 65001 >nul
-glaux.exe
-```
 
 ## Troubleshooting
 
