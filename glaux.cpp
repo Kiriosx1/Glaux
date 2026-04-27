@@ -11,10 +11,6 @@
 #include <iomanip>
 #include <limits>
 
-// ═══════════════════════════════════════════════════════════════════
-//  CONSOLE COLOR HELPERS
-// ═══════════════════════════════════════════════════════════════════
-
 static HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 enum class Color : WORD {
@@ -49,10 +45,6 @@ void cprint(const std::string& text, Color fg, Color bg = Color::Black) {
     std::cout << text;
     resetColor();
 }
-
-// ═══════════════════════════════════════════════════════════════════
-//  ASCII ART OWL
-// ═══════════════════════════════════════════════════════════════════
 
 void printBanner() {
     setColor(Color::DarkGray);
@@ -99,9 +91,6 @@ void printBanner() {
     resetColor();
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  XTEA — eXtended Tiny Encryption Algorithm
-// ═══════════════════════════════════════════════════════════════════
 namespace XTEA {
 
     constexpr uint32_t DELTA  = 0x9E3779B9u;
@@ -201,10 +190,6 @@ namespace XTEA {
 
 } // namespace XTEA
 
-// ═══════════════════════════════════════════════════════════════════
-//  BMP HANDLER
-// ═══════════════════════════════════════════════════════════════════
-
 class BMPImage {
 public:
     static constexpr size_t HEADER_SIZE = 54; // First 54 bytes — NEVER CHANGE
@@ -272,10 +257,6 @@ public:
         return (totalBits / 8) - 4;    // -4 για τα 32-bit length header
     }
 };
-
-// ═══════════════════════════════════════════════════════════════════
-//  LSB STEGANOGRAPHY — EMBED & EXTRACT
-// ═══════════════════════════════════════════════════════════════════
 
 namespace LSB {
 
@@ -384,10 +365,6 @@ namespace LSB {
 
 } // namespace LSB
 
-// ═══════════════════════════════════════════════════════════════════
-//  HEX DUMP (για debug/επαλήθευση)
-// ═══════════════════════════════════════════════════════════════════
-
 void hexDump(const std::vector<uint8_t>& data, size_t maxBytes = 64) {
     size_t limit = std::min(data.size(), maxBytes);
     setColor(Color::DarkGray);
@@ -401,9 +378,6 @@ void hexDump(const std::vector<uint8_t>& data, size_t maxBytes = 64) {
     resetColor();
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  ENCODE COMMAND - SIMPLIFIED
-// ═══════════════════════════════════════════════════════════════════
 
 void cmdEncode() {
     std::cout << "\n";
@@ -594,10 +568,6 @@ void cmdEncode() {
     std::cin.ignore();
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  DECODE COMMAND - SIMPLIFIED
-// ═══════════════════════════════════════════════════════════════════
-
 void cmdDecode() {
     std::cout << "\n";
     cprint("  ╔══════════════════════════════════════════════════════════════╗\n", Color::Magenta);
@@ -722,10 +692,6 @@ void cmdDecode() {
     std::cin.ignore();
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  INFO COMMAND — SIMPLIFIED BMP INFORMATION
-// ═══════════════════════════════════════════════════════════════════
-
 void cmdInfo() {
     std::cout << "\n";
     cprint("  ╔══════════════════════════════════════════════════════════════╗\n", Color::Cyan);
@@ -810,10 +776,6 @@ void cmdInfo() {
     cprint("  Press Enter to continue...", Color::Cyan);
     std::cin.ignore();
 }
-
-// ═══════════════════════════════════════════════════════════════════
-//  MAIN MENU - SIMPLIFIED
-// ═══════════════════════════════════════════════════════════════════
 
 void printMenu() {
     std::cout << "\n";
